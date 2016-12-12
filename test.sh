@@ -38,11 +38,11 @@ curl -XPUT "$ELASTIC_URL/$ELASTIC_INDEX/" -d '
         "wdpfilter1" : {
           "type" : "word_delimiter",
           "preserve_original" : true
-        }, 
+        },
         "wdpfilter2" : {
           "type" : "word_delimiter",
-          "split_on_case_change" : false 
-        } 
+          "split_on_case_change" : false
+        }
       }
     }
   },

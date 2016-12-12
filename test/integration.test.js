@@ -4,6 +4,7 @@ var chai = require('chai');
 var expect = chai.expect;
 var sinon = require('sinon');
 var watzdprice = require('watzdprice');
+var moment = require('moment');
 
 describe('index', function () {
   var sandbox;
@@ -19,10 +20,37 @@ describe('index', function () {
   });
 
   it('should run', function (done) {
-    watzdprice.updateProduct({
+    watzdprice.updateProduct(moment(), {
       name: 'Andre Broers',
       url: 'http://www.bekijkhet.com'
     }, function (error, result) {
+      console.log('!!!!!!!!!!!!!');
+      console.log(error);
+      console.log('!!!!!!!!!!!!!');
+      console.log(result);
+      console.log('!!!!!!!!!!!!!');
+      expect(error).not.to.be.null;
+      done();
+    });
+  });
+
+  it('should run', function (done) {
+    watzdprice.updateProduct(moment(), {
+      name: 'Andre Broersx',
+      url: 'http://www.bekijkhet.com'
+    }, function (error, result) {
+      console.log('!!!!!!!!!!!!!');
+      console.log(error);
+      console.log('!!!!!!!!!!!!!');
+      console.log(result);
+      console.log('!!!!!!!!!!!!!');
+      expect(error).not.to.be.null;
+      done();
+    });
+  });
+
+  it('should run', function (done) {
+    watzdprice.findProducts('andre', function (error, result) {
       console.log('!!!!!!!!!!!!!');
       console.log(error);
       console.log('!!!!!!!!!!!!!');
