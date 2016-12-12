@@ -1,0 +1,21 @@
+{
+  "name": "watzdprice_it",
+  "version": "1.0.0",
+  "description": "watzdprice integration testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/_mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "watzdprice": "file:watzdprice.tgz"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.11.1",
+    "mocha": "^3.2.0",
+    "sinon": "^1.17.6"
+  }
+}

@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  gateway:
+    image: itzg/elasticsearch
+    environment:
+      UNICAST_HOSTS: master
+      TYPE: GATEWAY
+    ports:
+      - "9200:9200"
+
+  master:
+    image: itzg/elasticsearch
+    environment:
+      UNICAST_HOSTS: gateway
+      TYPE: MASTER
+      MIN_MASTERS: 2
+
+  data:
+    image: itzg/elasticsearch
+    environment:
+      UNICAST_HOSTS: master,gateway
+      TYPE: DATA
